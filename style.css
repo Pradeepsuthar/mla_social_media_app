@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+/* Global Styles */
+
+:root {
+	--border-color: #dee2e6;
+	--app-header-bg-color: linear-gradient(to right, #00457e, #c9eca2);
+	--app-header-contrast-color: #fff;
+	--app-footer-menu-bg-color: #fff;
+	--app-footer-menu-contrast-color: #222;
+	--background-color: #F0F2F5;
+	--primary: #1dbf73;
+}
+
+*,
+::after,
+::before {
+	box-sizing: border-box
+}
+
+@media (prefers-reduced-motion:no-preference) {
+	 :root {
+		scroll-behavior: smooth
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	-webkit-text-size-adjust: 100%;
+	-webkit-tap-highlight-color: transparent
+}
+
+
+/* App Header */
+
+.app_header {
+	background: var(--app-header-bg-color);
+	color: var(--app-header-contrast-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 15px;
+}
+
+.app_header .menu {
+	display: flex;
+	align-items: center;
+}
+
+.app_header .menu span.title {
+	margin-left: 10px;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.app_header .profile_image img {
+	width: 35px;
+	border-radius: 100%;
+	margin-left: 5px;
+}
+
+
+/* Category */
+
+.all_categories {
+	background: #fff;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	white-space: nowrap;
+	-webkit-overflow-scrolling: touch;
+	padding: 0;
+	border-bottom: 1px solid var(--border-color);
+}
+
+.all_categories .category_item {
+	padding: 10px 15px;
+}
+
+.all_categories::-webkit-scrollbar {
+	display: none;
+}
+
+.all_categories .category_item span {
+	font-size: 14px;
+	font-weight: 500;
+	color: #0f74c7;
+}
+
+.all_categories .category_item.active {
+	border-bottom: 3px solid var(--primary);
+}
+
+
+/* All post containe */
+
+.all_post_container {
+	width: 100%;
+	height: 100%;
+	padding-bottom: 60px;
+	background: var(--background-color);
+}
+
+
+/* Post */
+
+.post__container {
+	width: 100%;
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto
+}
+
+.post {
+	box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+	border: none;
+	border-radius: 10px;
+	background-color: #fff;
+	margin-bottom: 10px;
+}
+
+.post_header {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+}
+
+.post_header .user {
+	display: flex;
+	align-items: center;
+}
+
+.post_header .user .avatar_img img {
+	width: 50px;
+	border-radius: 100%;
+	margin-right: 10px;
+}
+
+.post_header .user .user_data {
+	display: grid;
+}
+
+.post_header .user .user_data span.username {
+	font-size: 14px;
+	font-weight: 500;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.post_header .user .user_data span.timestamp {
+	font-size: 12px;
+	color: #6e6e6e;
+}
+
+.post_content {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.post_content .text {
+	padding: 0 20px;
+	font-size: 13px;
+	line-height: 1.5;
+}
+
+.post_content .text .see_more {
+	color: #222;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.post_status {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 20px;
+}
+
+.action__btns {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px 20px;
+	font-size: 14px;
+}
+
+.fb__emojis {
+	width: 18px;
+	border-radius: 50%;
+}
+
+@media(max-width:768px) {
+	.post {
+		border-radius: 0;
+	}
+}
+
+
+/* Footer menu */
+
+footer.menu {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	background: var(--app-footer-menu-bg-color);
+	color: var(--app-footer-menu-contrast-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0 .125rem 1.125rem rgba(0, 0, 0, 0.075);
+}
+
+footer.menu .menu_link {
+	display: grid;
+	align-items: center;
+	text-align: center;
+	width: 100%;
+	padding: 10px;
+	color: #292828;
+}
+
+footer.menu .menu_link span.icon {
+	font-size: 25px;
+	margin: 0;
+	padding: 0;
+}
+
+footer.menu .menu_link span.title {
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+}
+
+footer.menu .menu_link.active {
+	color: #0f74c7;
+}
